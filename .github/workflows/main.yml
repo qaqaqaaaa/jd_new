@@ -20,7 +20,7 @@ jobs:
           mkdir -p ~/.ssh
           echo -e "${{ secrets.LXKEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan gitee.com > ~/.ssh/known_hosts
+          ssh-keyscan -y -f  ~/.ssh/id_rsa >  ~/.ssh/id_rsa.pub
       - name: sync LXK9301-scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
