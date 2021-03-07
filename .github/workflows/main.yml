@@ -30,7 +30,7 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan gitee.com > ~/.ssh/known_hosts
 
-    - name: sync LXK9301-scripts
+    - name: sync
       uses: repo-sync/github-sync@v2
       if: env.PAT
       with:
