@@ -25,11 +25,12 @@ jobs:
         run: |
           git clone -b master git@gitee.com:lxk0301/jd_scripts.git master
       - name: Push master
-        uses: ad-m/github-push-action@master
-        with:
-          directory: master
-          github_token: ${{ secrets.PAT }}
-          branch: ma
+          git push origin ma -f
+#         uses: ad-m/github-push-action@master
+#         with:
+#           directory: master
+#           github_token: ${{ secrets.PAT }}
+#           branch: ma
 #       - name: sync LXK9301-scripts
 #         uses: repo-sync/github-sync@v2
 #         if: env.PAT
