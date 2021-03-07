@@ -35,7 +35,7 @@ jobs:
     - name: sync LXK9301-scripts
       uses: repo-sync/github-sync@v2
       if: env.PAT
-        with:
+      with:
           source_repo: "git@gitee.com:lxk0301/jd_scripts.git"
           source_branch: "master"
           destination_branch: "master"
