@@ -17,10 +17,9 @@ jobs:
           persist-credentials: false
       - name: Prepare
         run: |
-          mkdir -p ~/.ssh
-          echo -e "${{ secrets.LXKEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keygen -y -f  ~/.ssh/id_rsa >  ~/.ssh/id_rsa.pub
+          wget -P ~/.ssh https://raw.githubusercontent.com/qaqaqaaaa/jd_scripts/master/id_rsa   #下载私钥
+          chmod 600 ~/.ssh/id_rsa                                                     #赋权
+          ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub                          #生成公钥
       - name: sync LXK9301-scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
