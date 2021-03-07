@@ -25,6 +25,7 @@ jobs:
         run: |
           git clone -b master git@gitee.com:lxk0301/jd_scripts.git master
       - name: Push master
+        run: |
           git push origin ma -f
 #         uses: ad-m/github-push-action@master
 #         with:
