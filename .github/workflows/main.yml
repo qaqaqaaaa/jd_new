@@ -27,7 +27,7 @@ jobs:
       - name: Push master
         uses: ad-m/github-push-action@master
         with:
-          directory: ma
+          directory: master
           github_token: ${{ secrets.PAT }}
           branch: ma
 #       - name: sync LXK9301-scripts
