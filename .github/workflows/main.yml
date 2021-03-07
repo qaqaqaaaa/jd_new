@@ -4,8 +4,6 @@ on:
   schedule:
   - cron:  "*/15 * * * *"
   workflow_dispatch:
-  watch:
-    types: started
 
 jobs:
   build:
@@ -16,6 +14,7 @@ jobs:
     steps:
     - name: Init Build Dependencies
       env:
+        PAT: ${{ secrets.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11
         DEBIAN_FRONTEND: noninteractive
       run: |
         sudo -E rm -rf /etc/apt/sources.list.d
@@ -30,24 +29,12 @@ jobs:
         echo -e "${{ secrets.LXKEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan gitee.com > ~/.ssh/known_hosts
-
-    - name: Clone master
-      run: |
-        git clone -b master git@gitee.com:lxk0301/jd_scripts.git master
-  repo-sync:
-    env:
-      PAT: ${{ secrets.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11
-      dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} # 我自己同步到gitee使用，其他人可忽略
-    runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
-    steps:
-      - uses: actions/checkout@v2
-        with:
+    - uses: actions/checkout@v2
+      with:
           persist-credentials: false
-
-      - name: sync LXK9301-scripts
-        uses: repo-sync/github-sync@v2
-        if: env.PAT
+    - name: sync LXK9301-scripts
+      uses: repo-sync/github-sync@v2
+      if: env.PAT
         with:
           source_repo: "git@gitee.com:lxk0301/jd_scripts.git"
           source_branch: "master"
