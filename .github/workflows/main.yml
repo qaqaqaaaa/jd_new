@@ -1,4 +1,4 @@
-name: sync-lxk0301/jd_scripts
+name: sync-lxk0301/jd_script
 
 on:
   schedule:
