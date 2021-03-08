@@ -25,12 +25,15 @@ jobs:
           git clone -b master git@gitee.com:lxk0301/jd_scripts.git master
       - name: Push master
         run: |
-          uses: repo-sync/github-sync@v2
-          with:
-           source_repo: "git@gitee.com:lxk0301/jd_scripts.git"
-           source_branch: "master"
-           destination_branch: "master"
-           github_token: ${{ secrets.PAT }}
+
+          git push -f https://github.com/qaqaqaaaa/jd_new.git ma
+
+       #   uses: repo-sync/github-sync@v2
+       #   with:
+        #   source_repo: "git@gitee.com:lxk0301/jd_scripts.git"
+        #   source_branch: "master"
+         #  destination_branch: "master"
+      #     github_token: ${{ secrets.PAT }}
 #         uses: ad-m/github-push-action@master
 #         with:
 #           directory: master
