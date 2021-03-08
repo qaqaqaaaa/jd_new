@@ -26,7 +26,7 @@ jobs:
       - name: Push master
         run: |
 
-          git push -f https://github.com/qaqaqaaaa/jd_new.git ma
+          git push -f https://github.com/qaqaqaaaa/jd_new.git develop:ma
 
        #   uses: repo-sync/github-sync@v2
        #   with:
