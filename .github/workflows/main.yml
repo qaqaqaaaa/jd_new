@@ -37,7 +37,7 @@ jobs:
          #  destination_branch: "master"
       #     github_token: ${{ secrets.PAT }}
          uses: ad-m/github-push-action@master
-           with:
+          with:
            directory: master
            github_token: ${{ secrets.PAT }}
            branch: master
