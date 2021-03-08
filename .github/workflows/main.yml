@@ -25,6 +25,11 @@ jobs:
           git clone -b master git@gitee.com:lxk0301/jd_scripts.git master
       - name: Push master
        # run: |   
+        uses: ad-m/github-push-action@master
+        with:
+            directory: master
+            github_token: ${{ secrets.PAT }}
+            branch: master
           #git push -f origin master:ma
 
 # git pull --rebase master origin
@@ -36,8 +41,3 @@ jobs:
         #   source_branch: "master"
          #  destination_branch: "master"
       #     github_token: ${{ secrets.PAT }}
-          uses: ad-m/github-push-action@master
-          with:
-            directory: master
-            github_token: ${{ secrets.PAT }}
-            branch: master
