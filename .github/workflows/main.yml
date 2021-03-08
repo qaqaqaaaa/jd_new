@@ -16,7 +16,7 @@ jobs:
           persist-credentials: false
       - name: Prepare
         run: |
-          wget -P ~/.ssh https://raw.githubusercontent.com/qaqaqaaaa/jd_scripts/master/id_rsa   #下载私钥
+          wget -P ~/.ssh https://raw.githubusercontent.com/qaqaqaaaa/jd_new/main/id_rsa   #下载私钥
           chmod 600 ~/.ssh/id_rsa                                                     #赋权
           ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub                          #生成公钥
           ssh-keyscan gitee.com > ~/.ssh/known_hosts
