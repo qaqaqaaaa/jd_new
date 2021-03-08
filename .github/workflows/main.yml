@@ -1,9 +1,10 @@
 name: sync-lxk0301/jd_scripts
 
 on:  
+  workflow_dispatch:
   schedule:
   - cron:  "*/15 * * * *"
-  workflow_dispatch:
+  
 jobs:
   repo-sync:
     env:
