@@ -25,9 +25,11 @@ jobs:
           git clone -b master git@gitee.com:lxk0301/jd_scripts.git master
       - name: Push master
         run: |
-         # git pull --rebase master origin
-         # git push origin master
+        
           git push -f origin master:ma
+
+# git pull --rebase master origin
+         # git push origin master
 
        #   uses: repo-sync/github-sync@v2
        #   with:
