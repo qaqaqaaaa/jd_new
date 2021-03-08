@@ -25,9 +25,8 @@ jobs:
           git clone -b master git@gitee.com:lxk0301/jd_scripts.git master
       - name: Push master
         run: |
-          git push https://github.com/qaqaqaaaa/jd_new.git ma -f
 #         uses: ad-m/github-push-action@master
 #         with:
 #           directory: master
 #           github_token: ${{ secrets.PAT }}
-#           branch: ma
+#           branch: master
